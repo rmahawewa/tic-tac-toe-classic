@@ -1,5 +1,5 @@
 # tic-tac-toe-classic
-'''
+
 The current version of the game has two players -external player
                                                 -computer
 
@@ -21,4 +21,3 @@ The player completes a winning move first wins the game
 
 The game draws when all the cells in the filled and there's no any winning moves
 
-'''
