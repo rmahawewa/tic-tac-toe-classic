@@ -1,7 +1,3 @@
-// var script = document.createElement('script');
-// script.src = './script.js';
-// document.body.appendChild(script);
-
 let player1 = player("player one", "O");
 let computer = player("computer", "X");
 let count = 0;
