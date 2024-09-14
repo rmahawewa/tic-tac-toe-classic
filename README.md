@@ -23,5 +23,5 @@ The winning moves are shown with star sign below:
 
 The player completes a winning move first wins the game
 
-The game draws when all the cells in the filled and there's no any winning moves
+The game draws when all the cells in the board are filled with no any winning moves
 
