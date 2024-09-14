@@ -11,11 +11,11 @@ The two players make a move one after the other player
 
 The board contains three rows and three colums
 
-The winning moves are like below:
+The winning moves are shown with star sign below:
 
-1 * * *   2 - - -  3 - - -  4 * - -  5 - * -  6 - - *  7 * - -  8 - - *
-  - - -     * * *    - - -    * - -    - * -    - - *    - * -    - * -
-  - - -     - - -    * * *    * - -    - * -    - - *    - - *    * - -
+- - - 1 * * *   2 ~ ~ ~  3 ~ ~ ~  4 * ~ ~  5 ~ * ~  6 ~ ~ *  7 * ~ ~  8 ~ ~ *
+- - -   ~ ~ ~     * * *    ~ ~ ~    * ~ ~    ~ * ~    ~ ~ *    ~ * ~    ~ * ~
+- - -   ~ ~ ~     ~ ~ ~    * * *    * ~ ~    ~ * ~    ~ ~ *    ~ ~ *    * ~ ~
 
 The player completes a winning move first wins the game
 
