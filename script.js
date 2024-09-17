@@ -42,7 +42,7 @@ function proceed(element){
 function player(player, sign){ 
     let player_code = player;
     let mark = sign;
-    let cnt = -1;
+    let game_start_order = -1;
     const moves = [0,0,0,0,0,0,0,0,0];
 
     const reset_moves = () => {
@@ -92,6 +92,7 @@ function player(player, sign){
     }
 
     const get_player_mark_button_click = (s) => {
+        //get user selected mark or symbol
         let mrk = proceed(s).get_element_id();
         const interface_select_symbol = proceed("#model-get-sign");
         interface_select_symbol.make_invisible();
@@ -129,7 +130,7 @@ function player(player, sign){
         console.log(moves);
     }
 
-    return {player_code, mark, cnt, moves, get_player_data, click_start, focus_username_input, get_username_button_click, get_user_symbol, get_player_mark_button_click, get_space, add_sign, first_move, gameboard_click, reset_moves};
+    return {player_code, mark, game_start_order, moves, get_player_data, click_start, focus_username_input, get_username_button_click, get_user_symbol, get_player_mark_button_click, get_space, add_sign, first_move, gameboard_click, reset_moves};
 }
 
 function conclution(gb,moves){
@@ -161,18 +162,18 @@ function conclution(gb,moves){
 
 function game_board(){
     let gameboard = ["", "", "", "", "", "", "", "", ""];
-    let gb = [10, 10, 10, 10, 10, 10, 10, 10, 10]
+    let get_gb_symbol_pattern = [10, 10, 10, 10, 10, 10, 10, 10, 10]; // functionalities associated the attribute name get_gb_symbol_pattern has to be implemented. I want this functionalities for computer to make smarter moves. Here initial array position value is 10. "X" symbol will change it to 1, and "O" symbol will change it to "-1". When a group of winning cells makes the product of +10 , (-1 * -1 * 10) or (1 * 1 * 10) and the next move is to the computer, the computer should identify those group of cells with +10 and make next move accordingly.
 
     const reset_gameboard = () => {
         gameboard.forEach((v,i) => gameboard[i] = "");
-        gb.forEach((v,i) => gb[i] = 10);
+        get_gb_symbol_pattern.forEach((v,i) => get_gb_symbol_pattern[i] = 10);
         draw_board();
     }
 
     const add = (index, sign) => {
         gameboard[index] = sign;
-        gb[index] = sign.localeCompare("X") === 0?1:-1;
-        console.log(gb);
+        get_gb_symbol_pattern[index] = sign.localeCompare("X") === 0?1:-1;
+        console.log(get_gb_symbol_pattern);
     }
 
     const check_empty = () => {
