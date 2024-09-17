@@ -60,11 +60,11 @@ function begin(){
     let message_content = beginner + " begins the game";
     let msg_vw = message_view("#message", "#view-msg", message_content, 3000);
     msg_vw.view_message();
-    computer.cnt = computer.first_move(gameboard, computer.mark);
-    console.log("computer count: " + computer.cnt);
-    player1.cnt = computer.cnt===0?1:0;
-    console.log("player count: " + player1.cnt);
-    count = computer.cnt===0?(count+1):(count);
+    computer.game_start_order = computer.first_move(gameboard, computer.mark);
+    console.log("computer count: " + computer.game_start_order);
+    player1.game_start_order = computer.game_start_order===0?1:0;
+    console.log("player count: " + player1.game_start_order);
+    count = computer.game_start_order===0?(count+1):(count);
     console.log("count: " + count);
 }
 
@@ -74,7 +74,7 @@ board_buttons.forEach((btn) =>
     const indx = btn.value;
     const btn_dsply = btn.innerHTML;
     
-    if(player1.player_code !== undefined && count%2 === player1.cnt && count < 9 && btn_dsply.localeCompare("") === 0 && stts_comp ===0){
+    if(player1.player_code !== undefined && count%2 === player1.game_start_order && count < 9 && btn_dsply.localeCompare("") === 0 && stts_comp ===0){
         player1.gameboard_click(gameboard, indx, player1.mark);
         let stts_player = conclution(gameboard, player1.moves).concl();
         setTimeout(() => {
